@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data into MySQL</title>
+</head>
+<body>
+    <div>
+        <h2>Badminton</h2>
+        
+        <form action="BadmintonDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Save_Badminton">
+            <label for="User_ID">User ID:</label>
+            <input type="text" id="user_id" name="User_ID" required>
+            <br><br>
+            <label for="name">Session Type:</label>
+            <input type="text" id="session_type" name="Session_type" required>
+            <br><br>
+            <label for="Duration_Minutes">Duration Minutes:</label>
+            <input type="text" id="duration_minutes" name="Duration_Minutes" required>
+            <br><br>
+            <label for="Calories_burn">Calorie Burn:</label>
+            <input type="text" id="calorie_burn" name="Calorie_burn" required>
+            <br><br>
+            <input type="submit" value="Insert Data">
+        </form><br><br>
+
+        <form action="BadmintonDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Get_Badminton_Logs">
+            <label for="name">User ID:</label>
+            <input type="ID" id="user_id" name="User_ID" required>
+            <br><br>
+            
+            <input type="submit" value="Login">
+        </form><br><br>
+    </div>
+    
+</body>
+</html>

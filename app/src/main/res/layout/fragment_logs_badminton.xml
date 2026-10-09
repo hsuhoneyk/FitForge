@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Badminton Logs"
+                android:textColor="#212529"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent Sessions"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- The List: Replacing the heavy Table with clean List Items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBadmintonLogs"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:nestedScrollingEnabled="true"/>
+
+            <!-- Floating Goal Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monthly Badminton Goal"
+                        android:textStyle="bold"
+                        android:textSize="20sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSessiongoal"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/chipGroupSessionType"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginTop="20dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etbadgoalSession"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:inputType="number"
+                            android:hint="Goal Session"
+                            android:textColor="@color/black"
+                            android:textColorHint="#666666" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilcaloriesgoal"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/chipGroupSessionType"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="20dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etbadgoalCalories"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:inputType="number"
+                            android:hint="Goal Calories"
+                            android:textColor="@color/black"
+                            android:textColorHint="#666666" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:id="@+id/btnUpdateGoals"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="@color/black"
+                        android:textColor="@color/white"
+                        android:text="Set Goals" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

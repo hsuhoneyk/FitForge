@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/badminton_nav_graph"
+    app:startDestination="@id/BadmintonTrackFragment">
+    <fragment
+        android:id="@+id/BadmintonTrackFragment"
+        android:name="com.example.fitforge.BadmintonTrack"
+        android:label="Badminton Track Fragment"
+        tools:layout="@layout/fragment_track_badminton">
+        <action
+            android:id="@+id/BTrackToLogs"
+            app:destination="@+id/BadmintonLogFragment" />
+        <action
+            android:id="@+id/BTrackToData"
+            app:destination="@+id/BadmintonDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/BadmintonLogFragment"
+        android:name="com.example.fitforge.BadmintonLogs"
+        android:label="Badminton Logs Fragment"
+        tools:layout="@layout/fragment_logs_badminton">
+        <action
+            android:id="@+id/BLogsToTrack"
+            app:destination="@+id/BadmintonTrackFragment" />
+        <action
+            android:id="@+id/BLogsToData"
+            app:destination="@+id/BadmintonDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/BadmintonDataFragment"
+        android:name="com.example.fitforge.BadmintonData"
+        android:label="Badminton Data Fragment"
+        tools:layout="@layout/fragment_data_badminton">
+        <action
+            android:id="@+id/BDataToTrack"
+            app:destination="@+id/BadmintonTrackFragment" />
+        <action
+            android:id="@+id/BDataToLogs"
+            app:destination="@+id/BadmintonLogFragment" />
+    </fragment>
+
+</navigation>

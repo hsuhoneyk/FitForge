@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data into MySQL</title>
+</head>
+<body>
+    <div>
+        <h2>Running</h2>
+        
+        <form action="RunningDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Save_RunData">
+            <label for="User_id">User ID:</label>
+            <input type="text" id="user_id" name="User_ID" required>
+            <br><br>
+            <label for="User_id">Route Name:</label>
+            <input type="text" id="route_name" name="Route_Name" required>
+            <br><br>
+            <label for="Total_distance">Total Distance:</label>
+            <input type="text" id="total_distance" name="Total_Distance" required>
+            <br><br>
+            <label for="Total_timing">Total Timing:</label>
+            <input type="text" id="Total_timing" name="Total_Timing" required>
+            <br><br>
+            <label for="Speed">Speed:</label>
+            <input type="text" id="speed" name="Speed" required>
+            <br><br>
+            <label for="Calorie_burn">Calorie Burn:</label>
+            <input type="text" id="calorie" name="Calorie_burn" required>
+            <br><br>
+            <input type="submit" value="Insert Data">
+        </form><br><br>
+
+        <form action="RunningDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="get_runlogs">
+            <label for="name">User ID:</label>
+            <input type="ID" id="User_id" name="User_ID" required>
+            <br><br>
+            
+            <input type="submit" value="Login">
+        </form><br><br>
+    </div>
+    
+</body>
+</html>

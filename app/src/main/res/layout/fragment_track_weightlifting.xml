@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/WeightliftingTrackFragment"
+    android:layout_width="match_parent"
+    android:background="@color/blue_light"
+    android:layout_height="match_parent"
+    tools:context=".WeightTrack">
+
+    <!-- TITLE -->
+    <TextView
+        android:id="@+id/titleWeightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="Weightlifting Session"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- EXERCISE NAME INPUT -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Tilweightname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/titleWeightText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Tietweightname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="e.g., Bench Press"
+            android:textColor="@color/black"
+            android:textColorHint="#666666" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- WEIGHT INPUT -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weightInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Tilweightname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/repsInputLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Tietweightinput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="numberDecimal"
+            android:hint="Weight"
+            android:textColor="@color/black"
+            android:textColorHint="#666666" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- REPS INPUT -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/repsInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Tilweightname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/weightInputLayout"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Tietrepsinput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:hint="Reps"
+            android:textColor="@color/black"
+            android:textColorHint="#666666" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/setCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many sets?"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/weightInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- SET COUNT INPUT -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/setCountInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/setCountLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Tietweightsets"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:hint="Number of sets (e.g., 1, 5, 10)"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textColorHint="#666666" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ADD SETS BUTTON -->
+    <Button
+        android:id="@+id/btnaddSets"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="➕ ADD SETS"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/setCountInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp" />
+
+    <!-- TOTAL SETS CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalSetsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnaddSets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/totalVolumeCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#1E1E1E">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Sets"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+            <TextView
+                android:id="@+id/totalSetsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TOTAL VOLUME CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalVolumeCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnaddSets"
+        app:layout_constraintEnd_toStartOf="@+id/totalCaloriesCard"
+        app:layout_constraintStart_toEndOf="@+id/totalSetsCard"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#1E1E1E">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Volume"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+            <TextView
+                android:id="@+id/totalVolumeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TOTAL CALORIES CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalCaloriesCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnaddSets"
+        app:layout_constraintStart_toEndOf="@+id/totalVolumeCard"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#1E1E1E">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calories_Burned"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+            <TextView
+                android:id="@+id/totalCaloriesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- PROGRESS LABEL -->
+    <TextView
+        android:id="@+id/progressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress to Goal (10 sets)"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/totalSetsCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- PROGRESS BAR -->
+    <ProgressBar
+        android:id="@+id/weightprogressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:progressTint="#00FF88"
+        app:layout_constraintTop_toBottomOf="@+id/progressLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- PROGRESS TEXT -->
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 / 10 sets"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        app:layout_constraintTop_toBottomOf="@+id/weightprogressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp" />
+
+    <!-- SAVE BUTTON -->
+    <Button
+        android:id="@+id/btnsaveweight"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="💾 SAVE WORKOUT"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/progressText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

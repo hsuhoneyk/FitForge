@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/WeightliftingDataFragment"
+    android:layout_height="match_parent"
+    tools:context=".WeightData">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="50dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weightlifting Progress"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Distance Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="4dp"
+            card_view:cardBackgroundColor="@color/blue_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sets Goal"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:id="@+id/tvSets_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp" />
+
+                <ProgressBar
+                    android:id="@+id/pbSets_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvSets_Value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 0 sets"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="6dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <!-- Calories Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="4dp"
+            card_view:cardBackgroundColor="@color/blue_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calories Goal"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:id="@+id/tvWeight_calpercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp" />
+
+                <ProgressBar
+                    android:id="@+id/pbWeight_calbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvWeight_calval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 0 kcal"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="6dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>

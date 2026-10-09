@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:backgroundTint="@color/blue_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFDFD"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtforge"
+        android:layout_width="312dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/abhaya_libre"
+        android:text="Forge Your Peak Fitness here!!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnstart"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/black"
+        android:text="Get Started"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtforge" />
+
+    <TextView
+        android:id="@+id/txtfit"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="179dp"
+        android:fontFamily="@font/allerta"
+        android:text="FitForge Fitness"
+        android:textSize="39sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imglogo" />
+
+    <ImageView
+        android:id="@+id/imglogo"
+        android:layout_width="413dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="80dp"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.997"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

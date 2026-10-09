@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data into MySQL</title>
+</head>
+<body>
+    <div>
+        <h2>Cycling</h2>
+        
+        <form action="CyclingDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Save_cycleData">
+            <label for="User_id">User ID:</label>
+            <input type="text" id="user_id" name="User_ID" required>
+            <br><br>
+            <label for="name">Route Name:</label>
+            <input type="text" id="route_name" name="Route_Name" required>
+            <br><br>
+            <label for="Total_distance">Total Distance:</label>
+            <input type="text" id="total_distance" name="Total_Distance" required>
+            <br><br>
+            <label for="Speed">Speed:</label>
+            <input type="text" id="speed" name="Speed" required>
+            <br><br>
+            <label for="Calorie_burn">Calorie Burn:</label>
+            <input type="text" id="cal_burn" name="Calorie_burn" required>
+            <br><br>
+            <input type="submit" value="Insert Data">
+        </form><br><br>
+
+        <form action="CyclingDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="get_cyclelogs">
+            <label for="name">User ID:</label>
+            <input type="ID" id="user_id" name="User_ID" required>
+            <br><br>
+            
+            <input type="submit" value="Login">
+        </form><br><br>
+    </div>
+    
+</body>
+</html>

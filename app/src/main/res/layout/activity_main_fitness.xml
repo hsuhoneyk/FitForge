@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FBFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp">
+
+        <TextView
+            android:id="@+id/tvallfitness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is FitForge Fitness Activities"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="16dp"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/actrunning"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:clickable="true"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/blue_light"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏃 Running"
+                    android:textSize="18sp"
+                    android:textColor="#2C3E50"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/actcycling"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/soft_teal"
+            android:clickable="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚴 Cycling"
+                    android:textSize="18sp"
+                    android:textColor="#2C3E50"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/actweightlifting"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="@color/soft_purple"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#89882A"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏋️ Weightlifting"
+                    android:textColor="#2C3E50"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/actBadminton"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#E8F5E9"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#89882A"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏸 Badminton"
+                    android:textColor="#2C3E50"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data into MySQL</title>
+</head>
+<body>
+    <div>
+        <h2>Running Target</h2>
+        
+        <form action="RunningTargetsDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Save_RunData">
+            <label for="User_id">User ID:</label>
+            <input type="text" id="user_id" name="User_ID" required>
+            <br><br>
+            <label for="Goal_distance">Goal_Distance:</label>
+            <input type="text" id="goal_distance" name="Goal_Distance" required>
+            <br><br>
+            <label for="Goal_timing">Goal Timing:</label>
+            <input type="text" id="goal_timing" name="Goal_Timing" required>
+            <br><br>
+            <label for="Goal_Calorie">Goal Calories:</label>
+            <input type="text" id="goal_Calorie" name="Goal_Calorie" required>
+            <br><br>
+            <input type="submit" value="Insert Data">
+        </form><br><br>
+
+        <form action="RunningTargetsDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="get_runlogs">
+            <label for="name">User ID:</label>
+            <input type="ID" id="User_id" name="User_ID" required>
+            <br><br>
+            
+            <input type="submit" value="Login">
+        </form><br><br>
+    </div>
+    
+</body>
+</html>

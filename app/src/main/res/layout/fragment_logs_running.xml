@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_light"
+    tools:context=".LogsRunning">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvRuntit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Running Logs"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="4dp"
+            card_view:cardBackgroundColor="#FAFAFA"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#E0E0E0"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Route"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Distance"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="Speed"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="Calories"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Date"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvrunmonthgoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monthly Fitness Goal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="4dp"
+            card_view:cardBackgroundColor="#FAFAFA">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:text="Running Goals (km)"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etgoaldis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter distance"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="6dp" />
+
+
+
+                <TextView
+                    android:text="Calories Goals (kcal)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/etgoalcal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter calories"
+                    android:inputType="number"
+                    android:layout_marginTop="6dp" />
+
+
+                <Button
+                    android:id="@+id/butnsavegoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Save Goals"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginTop="20dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

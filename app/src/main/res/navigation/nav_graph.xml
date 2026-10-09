@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RunningTrackFragment">
+    <fragment
+        android:id="@+id/RunningTrackFragment"
+        android:name="com.example.fitforge.TrackRunning"
+        android:label="Running Track Fragment"
+        tools:layout="@layout/fragment_track_running">
+        <action
+            android:id="@+id/TrackToLogs"
+            app:destination="@+id/RunningLogFragment" />
+        <action
+            android:id="@+id/TrackToData"
+            app:destination="@+id/RunningDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RunningLogFragment"
+        android:name="com.example.fitforge.LogsRunning"
+        android:label="Running Logs Fragment"
+        tools:layout="@layout/fragment_logs_running">
+        <action
+            android:id="@+id/LogsToTrack"
+            app:destination="@+id/RunningTrackFragment" />
+        <action
+            android:id="@+id/LogsToData"
+            app:destination="@+id/RunningDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RunningDataFragment"
+        android:name="com.example.fitforge.DataRunning"
+        android:label="Running Data Fragment"
+        tools:layout="@layout/fragment_data_running">
+        <action
+            android:id="@+id/DataToTrack"
+            app:destination="@+id/RunningTrackFragment" />
+        <action
+            android:id="@+id/DataToLogs"
+            app:destination="@+id/RunningLogFragment" />
+    </fragment>
+
+</navigation>

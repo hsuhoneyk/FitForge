@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CyclingTrackFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CyclingTrack">
+
+
+    <TextView
+        android:id="@+id/tvTitcycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#66000000"
+        android:padding="8dp"
+        android:text="Cycling  Session"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/cvmapcycle"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitcycle" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabcycletrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="Start Track"
+        android:src="@drawable/cycling"
+        app:layout_constraintBottom_toBottomOf="@id/cvmapcycle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="30dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cycleCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/cvmapcycle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:text="Distance"
+                    android:layout_width="0dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvcycledistance"
+                    android:text="0 m"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:text="Speed"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvcyclespeed"
+                    android:text="0 km/h"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:text="Calories"
+                    android:layout_width="0dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvcyclecal"
+                    android:text="0 kcal"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cycleinputl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="15dp"
+        android:hint="Route Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cycleCard">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietcycleRouteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnSaveCycle"
+        android:layout_width="385dp"
+        android:layout_height="60dp"
+        android:layout_margin="40dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/black"
+        android:text="Save Cycling Data"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cycleinputl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

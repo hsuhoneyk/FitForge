@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="50dp"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data"
+                android:textColor="#6C757D"
+                android:textSize="14sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly Statistics"
+                android:textColor="#212529"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Goal Progress Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎯 Monthly Goal Progress"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#212529" />
+
+                    <TextView
+                        android:id="@+id/tvGoalInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Goal: 10 sessions | 3000 kcal"
+                        android:textSize="12sp"
+                        android:textColor="#6C757D"
+                        android:layout_marginTop="4dp" />
+
+                    <ProgressBar
+                        android:id="@+id/DataprogressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="16dp"
+                        android:progress="0"
+                        android:progressTint="#4CAF50"
+                        android:progressBackgroundTint="#E0E0E0" />
+
+                    <TextView
+                        android:id="@+id/tvProgressDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/10 sessions | 0/3000 kcal"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvRemaining"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 sessions or 3000 kcal remaining"
+                        android:textSize="11sp"
+                        android:textColor="@color/pink"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Session Type Breakdown Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Session Type Breakdown"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#212529"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Singles -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="🏸"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Single"
+                            android:textSize="14sp"
+                            android:textColor="#555555" />
+
+                        <ProgressBar
+                            android:id="@+id/progressSingle"
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:progressTint="#4CAF50"
+                            android:progressBackgroundTint="#E8F5E9"
+                            android:progress="0" />
+
+                        <TextView
+                            android:id="@+id/tvSingleCount"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/pink"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <!-- Doubles -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="🏸"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Double"
+                            android:textSize="14sp"
+                            android:textColor="#555555" />
+
+                        <ProgressBar
+                            android:id="@+id/progressDouble"
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:progressTint="#2196F3"
+                            android:progressBackgroundTint="#E3F2FD"
+                            android:progress="0" />
+
+                        <TextView
+                            android:id="@+id/tvDoubleCount"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2196F3"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <!-- Drills -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="🎯"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Drills"
+                            android:textSize="14sp"
+                            android:textColor="#555555" />
+
+                        <ProgressBar
+                            android:id="@+id/progressDrills"
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:progressTint="#FF9800"
+                            android:progressBackgroundTint="#FFF3E0"
+                            android:progress="0" />
+
+                        <TextView
+                            android:id="@+id/tvDrillsCount"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF9800"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weightlifting_nav_graph"
+    app:startDestination="@id/WeightliftingTrackFragment">
+    <fragment
+        android:id="@+id/WeightliftingTrackFragment"
+        android:name="com.example.fitforge.WeightTrack"
+        android:label="Weightlifting Track Fragment"
+        tools:layout="@layout/fragment_track_weightlifting">
+        <action
+            android:id="@+id/WTrackToLogs"
+            app:destination="@+id/WeightliftingLogFragment" />
+        <action
+            android:id="@+id/WTrackToData"
+            app:destination="@+id/WeightliftingDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/WeightliftingLogFragment"
+        android:name="com.example.fitforge.WeightLogs"
+        android:label="Weightlifting Logs Fragment"
+        tools:layout="@layout/fragment_logs_weightlifting">
+        <action
+            android:id="@+id/WLogsToTrack"
+            app:destination="@+id/WeightliftingTrackFragment" />
+        <action
+            android:id="@+id/WLogsToData"
+            app:destination="@+id/WeightliftingDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/WeightliftingDataFragment"
+        android:name="com.example.fitforge.WeightData"
+        android:label="Weightlifting Data Fragment"
+        tools:layout="@layout/fragment_data_weightlifting">
+        <action
+            android:id="@+id/WDataToTrack"
+            app:destination="@+id/WeightliftingTrackFragment" />
+        <action
+            android:id="@+id/WDataToLogs"
+            app:destination="@+id/WeightliftingLogFragment" />
+    </fragment>
+
+</navigation>

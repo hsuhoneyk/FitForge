@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/BadmintonTrackFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9"
+    tools:context=".BadmintonTrack">
+
+    <!-- TITLE -->
+    <TextView
+        android:id="@+id/titleBadmintonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="Badminton Session"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SESSION TYPE LABEL -->
+    <TextView
+        android:id="@+id/sessionTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Session Type"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/titleBadmintonText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp" />
+
+    <!-- SESSION TYPE CHIPS -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupSessionType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sessionTypeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
+        app:singleSelection="true"
+        app:selectionRequired="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSingles"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏸 Singles"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipDoubles"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏸 Doubles" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipDrills"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎯 Drills" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- DURATION INPUT -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/durationInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupSessionType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDuration"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:hint="Duration (minutes)"
+            android:textColor="@color/black"
+            android:textColorHint="#666666" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- CALCULATE BUTTON -->
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="CALCULATE"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/durationInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp" />
+
+
+
+    <!-- ========== STATS CARDS (FIXED: Constraint to btnCalculate) ========== -->
+
+    <!-- TOTAL SESSIONS CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalSessionsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/totalMinutesCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Sessions"
+                android:textSize="11sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/totalSessionsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/pink" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TOTAL MINUTES CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalMinutesCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
+        app:layout_constraintEnd_toStartOf="@+id/totalCaloriesCard"
+        app:layout_constraintStart_toEndOf="@+id/totalSessionsCard"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Minutes"
+                android:textSize="11sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/totalMinutesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/pink" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TOTAL CALORIES CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalCaloriesCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/totalMinutesCard"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Calories"
+                android:textSize="11sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/totalCaloriesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/pink" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- PROGRESS LABEL -->
+    <TextView
+        android:id="@+id/progressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress to Goal (10 sessions)"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/totalSessionsCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- PROGRESS BAR -->
+    <ProgressBar
+        android:id="@+id/badmintonProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:max="100"
+        android:progressTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/progressLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- PROGRESS TEXT -->
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 / 10 sessions"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        app:layout_constraintTop_toBottomOf="@+id/badmintonProgressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp" />
+
+    <!-- SAVE BUTTON -->
+    <Button
+        android:id="@+id/btnSaveSession"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="SAVE SESSION"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/progressText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

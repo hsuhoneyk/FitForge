@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/CyclingTrackFragment"
+        android:icon="@drawable/trackrun"
+        android:title="TrackCycling" />
+    <item
+        android:id="@+id/CyclingLogFragment"
+        android:icon="@drawable/logs"
+        android:title="LogsCycling" />
+    <item
+        android:id="@+id/CyclingDataFragment"
+        android:icon="@drawable/data"
+        android:title="DataCycling" />
+</menu>

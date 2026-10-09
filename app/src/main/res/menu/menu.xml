@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/RunningTrackFragment"
+        android:icon="@drawable/trackrun"
+        android:title="RunTrack" />
+    <item
+        android:id="@+id/RunningLogFragment"
+        android:icon="@drawable/logs"
+        android:title="RunLogs" />
+    <item
+        android:id="@+id/RunningDataFragment"
+        android:icon="@drawable/data"
+        android:title="RunData" />
+</menu>

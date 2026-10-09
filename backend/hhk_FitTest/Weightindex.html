@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data into MySQL</title>
+</head>
+<body>
+    <div>
+        <h2>Weightlifting</h2>
+        
+        <form action="WeightDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Save_Weightlifting">
+            <label for="User_ID">User ID:</label>
+            <input type="text" id="user_id" name="User_ID" required>
+            <br><br>
+            <label for="name">Exercise Name:</label>
+            <input type="text" id="exercise_Name" name="Exercise_Name" required>
+            <br><br>
+            <label for="Weight">weight:</label>
+            <input type="text" id="weight" name="Weight" required>
+            <br><br>
+            <label for="Reps">reps:</label>
+            <input type="text" id="reps" name="Reps" required>
+            <br><br>
+            <label for="Total_Sets">Total Sets:</label>
+            <input type="text" id="total_sets" name="Total_Sets" required>
+            <br><br>
+            <label for="Total_Volume">Total Volume:</label>
+            <input type="text" id="total_volume" name="Total_Volume" required>
+            <br><br>
+            <label for="Calories_Burned">Calorie Burn:</label>
+            <input type="text" id="calories_burned" name="Calories_Burned" required>
+            <br><br>
+            <input type="submit" value="Insert Data">
+        </form><br><br>
+
+        <form action="WeightDAO.php" method="post">
+            <input type="hidden" name="phpFunction" value="Get_Weightlifting_Logs">
+            <label for="name">User ID:</label>
+            <input type="ID" id="user_id" name="User_ID" required>
+            <br><br>
+            
+            <input type="submit" value="Login">
+        </form><br><br>
+    </div>
+    
+</body>
+</html>

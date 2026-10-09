@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvexercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Exercise"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvweight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Weight"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvreps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Reps"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvsets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Sets"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvvolume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Volume"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvcalories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Calories"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Date"
+        android:textStyle="bold" />
+</LinearLayout>

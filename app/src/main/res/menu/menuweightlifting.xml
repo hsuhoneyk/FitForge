@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/WeightliftingTrackFragment"
+        android:icon="@drawable/weight"
+        android:title="WeightTrack" />
+    <item
+        android:id="@+id/WeightliftingLogFragment"
+        android:icon="@drawable/logs"
+        android:title="WeightLogs" />
+    <item
+        android:id="@+id/WeightliftingDataFragment"
+        android:icon="@drawable/data"
+        android:title="WeightData" />
+</menu>
+
